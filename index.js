@@ -8,7 +8,7 @@ const fs = require("fs");
 const Employee = [
 	{
 		type: "input",
-		name: "name",
+		name: "employeeName",
 		message: "What is your name?",
 	},
   {
@@ -23,16 +23,23 @@ const Employee = [
 	}
 ]
   
-  const log = () => {
-    for (something of Employee)
-    console.log(something.name);
-    inquirer.prompt(Employee).then((answers) => {
-      console.log({ ...answers });
-    	});
-  };
+  // const log = () => {
+  //   for (something of Employee)
+  //   console.log(something.name);
+  //   inquirer.prompt(Employee).then((answers) => {
+  //     console.log({ ...answers });
+  //   	});
+  // };
     
-  log();
+  // log();
 
+  const makeEmployeeHTML = () =>{
+    let answers = "sample string";
+    fs.writeFile("sample.html", answers, (err) =>
+    err ? console.error(err) : console.log ("Created HTML!")
+    )};
+  
+makeEmployeeHTML();
 
 //  // TODO: Create a function to write README file
 // function writeToFile(data) {
