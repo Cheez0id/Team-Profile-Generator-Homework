@@ -2,22 +2,35 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 
 //setting up questions for inquirer npm
-const questions = [
+// class Employee {
+//   constructor(){}
+// }
+const Employee = [
 	{
 		type: "input",
-		name: "title",
+		name: "name",
 		message: "What is your name?",
 	},
   {
 		type: "input",
-		name: "e-mail",
-		message: "What is your e-mail?",
+		name: "id",
+		message: "What is your id?",
+	},
+  {
+		type: "input",
+		name: "email",
+		message: "What is your email?",
 	}
 ]
   
   const log = () => {
-    for (something of questions)
-    console.log(something.name)};
+    for (something of Employee)
+    console.log(something.name);
+    inquirer.prompt(Employee).then((answers) => {
+      console.log({ ...answers });
+    	});
+  };
+    
   log();
 
 
@@ -28,13 +41,13 @@ const questions = [
 // 	);
 // }
 
-// // TODO: Create a function to initialize app
+// function to initialize app
 // function init() {
 // 	inquirer.prompt(questions).then((answers) => {
 // 		writeToFile(generateMarkdown({ ...answers }));
 // 	});
 // }
 
-// // Function call to initialize app
+// Function call to initialize app
 // init();
 
