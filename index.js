@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateHTML = require("./src/generateHTML");
+const generateTeam = require("./src/generateHTML");
 
 //setting up questions for inquirer npm
 
@@ -40,8 +40,8 @@ class Employee {
   }
 }
 //pretty sure I'm going to need to run inquirer.prompt here to get the data so as to create the new employee stuff
-const jessicka = new Employee (newEmployee.name, newEmployee.id, newEmployee.email);
-jessicka.printInfo();
+// const jessicka = new Employee (newEmployee.name, newEmployee.id, newEmployee.email);
+// jessicka.printInfo();
 // class Manager{};
 // class Engineer{};
 // class Intern{};
@@ -72,11 +72,11 @@ const init = () => {
     answerString = JSON.stringify(answers);
       console.log(typeof answerString);
 //a function to use the generatehtml function putting the answers into the html page generated      
-    makeEmployeeHTML(generateHTML
+    makeEmployeeHTML(generateTeam
       ({ ...answers }));
   }
   )}
-// init();
+init();
 
 
 
