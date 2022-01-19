@@ -1,7 +1,7 @@
 function generateHTML(Employee) {
   return `# ${answerString} 
   ## Employee Name
-  ${Employee.name}
+  ${Employee.employeeName}
   ## Employee ID
   ${Employee.id}
   ## Employee E-mail
