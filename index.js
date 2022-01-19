@@ -29,7 +29,7 @@ const newEmployee = [
 ]
 
   
-//TODO: figuring out classes
+//TODO: figuring out classes - working on testEmployeeFunc to be able to take the data that the user enters and create various classes
 const testEmployeeFunc = () =>{
 class Employee {
   constructor(name, id, email){
