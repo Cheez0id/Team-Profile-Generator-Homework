@@ -47,7 +47,7 @@ const init = () => {
     answerString = JSON.stringify(answers);
       console.log(typeof answerString);
     makeEmployeeHTML(generateHTML
-      (answerString));
+      ({ ...answers }));
   }
   )}
 init();

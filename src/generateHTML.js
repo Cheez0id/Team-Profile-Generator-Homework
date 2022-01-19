@@ -1,19 +1,11 @@
-function generateHTML(data) {
+function generateHTML(Employee) {
   return `# ${answerString} 
-  ## Description
-  ${data.description}
-  ## Table of Contents
-  ${data.contents}
-  ## Installation
-  ${data.installation}
-  ## Usage
-  ${data.usage}
-  ## Contributions:
-  ${data.contributing}
-  ## Testing:
-   ${data.tests}
-  ## Questions:
-  ${data.questions}`;
+  ## Employee Name
+  ${Employee.name}
+  ## Employee ID
+  ${Employee.id}
+  ## Employee E-mail
+  ${Employee.email}`;
 }
 
 module.exports = generateHTML;
