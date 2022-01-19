@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const generateHTML = require("./src/generateHTML");
 
 //setting up questions for inquirer npm
 // class Employee {
@@ -41,9 +42,12 @@ const Employee = [
 const init = () => {
 	inquirer.prompt(Employee).then((answers) => {
     console.log(typeof answers);
+
+
     answerString = JSON.stringify(answers);
       console.log(typeof answerString);
-    makeEmployeeHTML(answerString);
+    makeEmployeeHTML(generateHTML
+      (answerString));
   }
   )}
 init();
