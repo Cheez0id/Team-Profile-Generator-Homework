@@ -27,15 +27,20 @@ const newEmployee = [
 		message: "What is your email?",
 	}
 ]
+
   
 //TODO: figuring out classes
+const testEmployeeFunc = () =>{
 class Employee {
-constructor(name, id, email){
-this.name = name;
-this.id = id;
-this.email = email;
-};
+  constructor(name, id, email){
+    this.name = name;
+    this.id = id;
+    this.email = email;
+    };
+  }
 }
+const jessicka = new Employee (newEmployee.name, newEmployee.id, newEmployee.email);
+jessicka.printInfo();
 // class Manager{};
 // class Engineer{};
 // class Intern{};
