@@ -23,38 +23,30 @@ const Employee = [
 	}
 ]
   
-  // const log = () => {
-  //   for (something of Employee)
-  //   console.log(something.name);
-  //   inquirer.prompt(Employee).then((answers) => {
-  //     console.log({ ...answers });
-  //   	});
-  // };
+  const log = () => {
+      inquirer.prompt(Employee).then((answers) => {
+      console.log({ ...answers });
+    	});
+  };
     
   // log();
 
-  const makeEmployeeHTML = () =>{
-    let answers = "sample string";
-    fs.writeFile("sample.html", answers, (err) =>
+  const makeEmployeeHTML = (data) =>{
+    fs.writeFile("sample.html", data, (err) =>
     err ? console.error(err) : console.log ("Created HTML!")
     )};
   
-makeEmployeeHTML();
-
-//  // TODO: Create a function to write README file
-// function writeToFile(data) {
-// 	fs.writeFile("README.md", data, (err) =>
-// 		err ? console.error(err) : console.log("Success!")
-// 	);
-// }
 
 // function to initialize app
-// function init() {
-// 	inquirer.prompt(questions).then((answers) => {
-// 		writeToFile(generateMarkdown({ ...answers }));
-// 	});
-// }
+const init = () => {
+	inquirer.prompt(Employee).then((answers) => {
+    console.log(typeof answers);
+    answerString = JSON.stringify(answers);
+      console.log(typeof answerString);
+    makeEmployeeHTML(answerString);
+  }
+  )}
+init();
 
-// Function call to initialize app
-// init();
+
 
