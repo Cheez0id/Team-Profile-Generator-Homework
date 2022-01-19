@@ -1,4 +1,4 @@
-function generateHTML(Employee) {
+function generateHTML(newEmployee) {
   return `<!DOCTYPE html>
   <html lang="en">
   <head>
@@ -10,11 +10,11 @@ function generateHTML(Employee) {
   <body>
   # ${answerString} 
   ## Employee Name
-  ${Employee.employeeName}
+  ${newEmployee.employeeName}
   ## Employee ID
-  ${Employee.id}
+  ${newEmployee.id}
   ## Employee E-mail
-  ${Employee.email}
+  ${newEmployee.email}
   </body>
   </html>
  `;
