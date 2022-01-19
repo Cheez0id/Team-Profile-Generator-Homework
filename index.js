@@ -39,6 +39,7 @@ class Employee {
     };
   }
 }
+//pretty sure I'm going to need to run inquirer.prompt here to get the data so as to create the new employee stuff
 const jessicka = new Employee (newEmployee.name, newEmployee.id, newEmployee.email);
 jessicka.printInfo();
 // class Manager{};
