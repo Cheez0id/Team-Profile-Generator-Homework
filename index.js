@@ -21,7 +21,11 @@ const getRole = () =>{
       console.log("lol, it's undefined!")
     }
     else if(choice.position === 'Manager'){
-        inquirer.prompt(managerQs).then(managerResponses)}
+        inquirer.prompt(managerQs)}
+    else if(choice.position === 'Engineer'){
+          inquirer.prompt(engineerQs)}
+    else if(choice.position === 'Intern'){
+            inquirer.prompt(internQs)}
     else(console.log("you chose something other than manager!!"))
     return;
     })
