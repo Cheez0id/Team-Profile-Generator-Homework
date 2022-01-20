@@ -11,7 +11,10 @@ const newEmployee = [
 		name: "postion",
 		message: "What is your job title?",
     choices: ["Manager", "Engineer", "Intern"],
-	},
+	}
+]
+  //use the above answer to create 3 more functions with the 3 below questions plus role-specific
+  const managerQs = [
 	{
 		type: "input",
 		name: "employeeName",
@@ -26,20 +29,27 @@ const newEmployee = [
 		type: "input",
 		name: "email",
 		message: "What is your email?",
+	},
+  {
+		type: "input",
+		name: "officeNumber",
+		message: "What is your phone number?",
 	}
 ]
 
   
 //TODO: figuring out classes - working on testEmployeeFunc to be able to take the data that the user enters and create various classes
-const testEmployeeFunc = () =>{
-class Employee {
-  constructor(name, id, email){
-    this.name = name;
-    this.id = id;
-    this.email = email;
-    };
-  }
-}
+
+// const testEmployeeFunc = () =>{
+// class Employee {
+//   constructor(name, id, email){
+//     this.name = name;
+//     this.id = id;
+//     this.email = email;
+//     };
+//   }
+// }
+
 //pretty sure I'm going to need to run inquirer.prompt here to get the data so as to create the new employee stuff
 // const jessicka = new Employee (newEmployee.name, newEmployee.id, newEmployee.email);
 // jessicka.printInfo();
@@ -68,10 +78,10 @@ class Employee {
 const init = () => {
 	inquirer.prompt(newEmployee).then((answers) => {
     console.log(typeof answers);
+    const employee = new Employee(answers.employeeName, answers.id, answers.email);
+    console.log(Employee);
+   employee.printInfo();
 
-//stringified the answers for some reason
-    answerString = JSON.stringify(answers);
-      console.log(typeof answerString);
 //a function to use the generatehtml function putting the answers into the html page generated      
     makeEmployeeHTML(generateTeam
       ({ ...answers }));

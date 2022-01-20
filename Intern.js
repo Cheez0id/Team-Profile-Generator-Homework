@@ -1,0 +1,1 @@
+//getrole getschool

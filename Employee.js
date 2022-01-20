@@ -1,17 +1,17 @@
-const Index = require('./index');
 
 class Employee {
   constructor(name, id, email) {
-    this.name = index.newEmployee.employeeName;
-    this.id = index.newEmployee.id;
-    this.email = index.newEmployee.email;
+    this.name = name;
+    this.id = id;
+    this.email = email;
   }
 
   printInfo() {
-    console.log(`Area: ${this.name}`);
-    console.log(`Perimeter: ${this.id}`);
-    console.log(`Perimeter: ${this.email}`);
+    console.log(`Name: ${this.name}`);
+    console.log(`Id: ${this.id}`);
+    console.log(`Email: ${this.email}`);
   }
 }
 
+//ge tname id email role(role will just return a string)
 module.exports = Employee;
