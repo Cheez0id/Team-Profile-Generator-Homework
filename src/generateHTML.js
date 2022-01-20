@@ -11,7 +11,7 @@
 // const Manager = require('./Manager');
 // const Employee = require('./Employee');
 
-const team = '${...answers}';
+const team = '';
 console.log(`here are the answers ${team}`);
 //THIS IS THE CODE FROM JUNG
 const generateTeam = team => {

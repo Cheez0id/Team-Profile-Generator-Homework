@@ -26,7 +26,8 @@ const init = () =>{
          employee.printInfo();
       
       //a function to use the generatehtml function putting the answers into the html page generated      
-          makeEmployeeHTML(generateTeam
+//TODO LOOK AT THE GENERATOR AND SEE IF ITS CORRECT          
+      makeEmployeeHTML(generateTeam
             ({ ...answers }));
         }
         )}
