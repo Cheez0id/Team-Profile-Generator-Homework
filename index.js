@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateTeam = require("./src/generateHTML");
+const Employee = require("./Employee");
 
 //setting up questions for inquirer npm
 
