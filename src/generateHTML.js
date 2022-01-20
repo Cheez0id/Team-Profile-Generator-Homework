@@ -75,6 +75,7 @@ const generateTeam = team => {
 
   const html = [];
 
+  //it looks like the below will create the cards based on the responses entered in by the employees. I need to create the team array from the answers that the employees put in?
   html.push(team
       .filter(employee => employee.getRole() === "Manager")
       .map(manager => generateManager(manager))

@@ -6,7 +6,7 @@ const Employee = require("./Employee");
 //setting up questions for inquirer npm
 
 
-const teamQs = [
+const roleChoice = [
   {
 		type: "list",
 		name: "position",
@@ -14,14 +14,22 @@ const teamQs = [
     choices: ["Manager", "Engineer", "Intern"],
 	}
 ]
-const getRole = () =>{
-  inquirer.prompt(teamQs).then((choice) =>{
+const init = () =>{
+  inquirer.prompt(roleChoice).then((choice) =>{
     console.log(choice.position);
     if(choice.position === undefined){
       console.log("lol, it's undefined!")
     }
     else if(choice.position === 'Manager'){
-        inquirer.prompt(managerQs)}
+        inquirer.prompt(managerQs).then((answers) => {
+          const employee = new Employee(answers.employeeName, answers.id, answers.email);
+         employee.printInfo();
+      
+      //a function to use the generatehtml function putting the answers into the html page generated      
+          makeEmployeeHTML(generateTeam
+            ({ ...answers }));
+        }
+        )}
     else if(choice.position === 'Engineer'){
           inquirer.prompt(engineerQs)}
     else if(choice.position === 'Intern'){
@@ -29,10 +37,14 @@ const getRole = () =>{
     else(console.log("you chose something other than manager!!"))
     return;
     })
+    // makeEmployeeHTML(generateTeam
+    //   ({ ...answers }));
   }
 
-  getRole();
+  init();
+
   //use the above answer to create 3 more functions with the 3 below questions plus role-specific
+  //TODO make the questions for the other roles
   const managerQs = [
 	{
 		type: "input",
@@ -56,56 +68,12 @@ const getRole = () =>{
 	}
 ]
 
-  
-//TODO: figuring out classes - working on testEmployeeFunc to be able to take the data that the user enters and create various classes
-
-// const testEmployeeFunc = () =>{
-// class Employee {
-//   constructor(name, id, email){
-//     this.name = name;
-//     this.id = id;
-//     this.email = email;
-//     };
-//   }
-// }
-
-//pretty sure I'm going to need to run inquirer.prompt here to get the data so as to create the new employee stuff
-// const jessicka = new Employee (newEmployee.name, newEmployee.id, newEmployee.email);
-// jessicka.printInfo();
-// class Manager{};
-// class Engineer{};
-// class Intern{};
-
-
-//Just a console.log function
-  const log = () => {
-      inquirer.prompt(teamQs).then((answers) => {
-      console.log({ ...answers });
-      console.log(answers.employeeName);
-    	});
-  };
-  // log();
-
  //a function to write an html file 
   const makeEmployeeHTML = (data) =>{
     fs.writeFile("sample.html", data, (err) =>
     err ? console.error(err) : console.log ("Created HTML!")
     )};
   
-
-// function to initialize app
-const init = () => {
-	inquirer.prompt(teamQs).then((answers) => {
-    const employee = new Employee(answers.employeeName, answers.id, answers.email);
-    console.log(Employee);
-   employee.printInfo();
-
-//a function to use the generatehtml function putting the answers into the html page generated      
-    makeEmployeeHTML(generateTeam
-      ({ ...answers }));
-  }
-  )}
-// init();
 
 
 
