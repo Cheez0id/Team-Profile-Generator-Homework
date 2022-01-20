@@ -5,14 +5,29 @@ const Employee = require("./Employee");
 
 //setting up questions for inquirer npm
 
+
 const teamQs = [
   {
 		type: "list",
-		name: "postion",
+		name: "position",
 		message: "What is your job title?",
     choices: ["Manager", "Engineer", "Intern"],
 	}
 ]
+const getRole = () =>{
+  inquirer.prompt(teamQs).then((choice) =>{
+    console.log(choice.position);
+    if(choice.position === undefined){
+      console.log("lol, it's undefined!")
+    }
+    else if(choice.position === 'Manager'){
+        inquirer.prompt(managerQs).then(managerResponses)}
+    else(console.log("you chose something other than manager!!"))
+    return;
+    })
+  }
+
+  getRole();
   //use the above answer to create 3 more functions with the 3 below questions plus role-specific
   const managerQs = [
 	{
@@ -77,7 +92,6 @@ const teamQs = [
 // function to initialize app
 const init = () => {
 	inquirer.prompt(teamQs).then((answers) => {
-    console.log(typeof answers);
     const employee = new Employee(answers.employeeName, answers.id, answers.email);
     console.log(Employee);
    employee.printInfo();
@@ -87,7 +101,7 @@ const init = () => {
       ({ ...answers }));
   }
   )}
-init();
+// init();
 
 
 
