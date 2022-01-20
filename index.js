@@ -5,7 +5,7 @@ const Employee = require("./Employee");
 
 //setting up questions for inquirer npm
 
-const newEmployee = [
+const teamQs = [
   {
 		type: "list",
 		name: "postion",
@@ -60,7 +60,7 @@ const newEmployee = [
 
 //Just a console.log function
   const log = () => {
-      inquirer.prompt(newEmployee).then((answers) => {
+      inquirer.prompt(teamQs).then((answers) => {
       console.log({ ...answers });
       console.log(answers.employeeName);
     	});
@@ -76,7 +76,7 @@ const newEmployee = [
 
 // function to initialize app
 const init = () => {
-	inquirer.prompt(newEmployee).then((answers) => {
+	inquirer.prompt(teamQs).then((answers) => {
     console.log(typeof answers);
     const employee = new Employee(answers.employeeName, answers.id, answers.email);
     console.log(Employee);
