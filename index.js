@@ -16,19 +16,22 @@ const roleChoice = [
 ]
 const init = () =>{
   inquirer.prompt(roleChoice).then((choice) =>{
-    console.log(choice.position);
+    console.log(typeof choice.position);
     if(choice.position === undefined){
       console.log("lol, it's undefined!")
     }
     else if(choice.position === 'Manager'){
         inquirer.prompt(managerQs).then((answers) => {
-          const employee = new Employee(answers.employeeName, answers.id, answers.email);
-         employee.printInfo();
+        const newEmployee = new Employee(answers.employeeName, answers.id, answers.email);
+         newEmployee.printInfo();
+         console.log(typeof newEmployee);
+         
+          
       
       //a function to use the generatehtml function putting the answers into the html page generated      
 //TODO LOOK AT THE GENERATOR AND SEE IF ITS CORRECT          
-      makeEmployeeHTML(generateTeam
-            ({ ...answers }));
+      makeEmployeeHTML(generateTeam(newEmployee));
+      
         }
         )}
     else if(choice.position === 'Engineer'){
@@ -37,6 +40,7 @@ const init = () =>{
             inquirer.prompt(internQs)}
     else(console.log("you chose something other than manager!!"))
     return;
+    
     })
     // makeEmployeeHTML(generateTeam
     //   ({ ...answers }));
