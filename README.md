@@ -6,6 +6,9 @@
 
  Build a Command-Line application that takes in information about an empoyee and generate HTML webpage to display summaries for each team member; include testing for evrey part of code.
 
+ ## link to walkthrough video
+ https://drive.google.com/file/d/1ZtgF06I--yTTtFPQTthMui5iTnCnuQnU/view?usp=sharing
+
  ## Acceptance Criteria
 
 ```md
