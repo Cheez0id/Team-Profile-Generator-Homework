@@ -23,8 +23,9 @@ const init = () =>{
     }
     else if(choice.position === 'Manager'){
         inquirer.prompt(managerQs).then((answers) => {
-        const employee = new Employee(answers.employeeName, answers.id, answers.email);
+        const employee = new Manager(answers.employeeName, answers.id, answers.email);
          employee.printInfo();
+
          console.log(typeof employee);
          
                 
@@ -69,7 +70,7 @@ const init = () =>{
   {
 		type: "input",
 		name: "officeNumber",
-		message: "What is your phone number?",
+		message: "What is your office number?",
 	}
 ]
 

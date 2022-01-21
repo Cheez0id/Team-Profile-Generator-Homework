@@ -10,7 +10,13 @@ class Employee {
     console.log(`Name: ${this.name}`);
     console.log(`Id: ${this.id}`);
     console.log(`Email: ${this.email}`);
+    console.log(`Office number: ${this.officeNumber}`);
+    console.log(`Role: ${this.role}`);
     
+  }
+
+  getRole = () =>{
+  
   }
 }
 
