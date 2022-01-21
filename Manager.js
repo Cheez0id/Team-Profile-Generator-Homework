@@ -12,9 +12,9 @@ class Manager extends Employee {
   }
 
 
-  getRole = () =>{
+  // getRole = () =>{
   
-  }
+  // }
 }
 
 
