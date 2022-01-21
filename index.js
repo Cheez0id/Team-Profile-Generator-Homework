@@ -2,7 +2,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const generateTeam = require("./src/generateHTML");
 const Manager = require("./Manager");
-const Employee = require("./Employee");
+
 
 //setting up questions for inquirer npm
 
@@ -28,10 +28,13 @@ const init = () =>{
 
          console.log(typeof employee);
          
-                
+let team =[]
+          team.push(employee);
+          console.log(team);
+          console.log(team[0]);
       //a function to use the generatehtml function putting the answers into the html page generated      
 //TODO LOOK AT THE GENERATOR AND SEE IF ITS CORRECT          
-      makeEmployeeHTML(generateTeam(employee));
+      makeEmployeeHTML(generateTeam(team));
       
         }
         )}
