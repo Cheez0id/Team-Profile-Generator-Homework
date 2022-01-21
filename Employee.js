@@ -14,14 +14,14 @@ class Employee {
     console.log(`Office number: ${this.officeNumber}`);
     console.log(`Role: ${this.role}`);
   }
-  else (console.log(`just an employee`))
-    
+  else (console.log(`just an employee`)) 
   }
-
   getRole = () =>{
-  
+  return this.role;
   }
 }
+
+
 
 //ge tname id email role(role will just return a string)
 module.exports = Employee;
