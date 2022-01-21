@@ -23,7 +23,7 @@ const init = () =>{
     }
     else if(choice.position === 'Manager'){
         inquirer.prompt(managerQs).then((answers) => {
-        const employee = new Manager(answers.employeeName, answers.id, answers.email);
+        const employee = new Manager(answers.employeeName, answers.id, answers.email, answers.officeNumber);
          employee.printInfo();
 
          console.log(typeof employee);

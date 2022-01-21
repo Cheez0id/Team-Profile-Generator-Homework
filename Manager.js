@@ -3,7 +3,7 @@
 const Employee = require('./Employee');
 
 class Manager extends Employee {
-  constructor(name, id, email, officeNumber, role) {
+  constructor(name, id, email, officeNumber) {
     
     //HEY SUPER IS IMPORTANT
     super(name, id, email);

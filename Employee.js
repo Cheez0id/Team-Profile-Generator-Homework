@@ -10,8 +10,11 @@ class Employee {
     console.log(`Name: ${this.name}`);
     console.log(`Id: ${this.id}`);
     console.log(`Email: ${this.email}`);
+    if (this.role = 'Manager'){
     console.log(`Office number: ${this.officeNumber}`);
     console.log(`Role: ${this.role}`);
+  }
+  else (console.log(`just an employee`))
     
   }
 
